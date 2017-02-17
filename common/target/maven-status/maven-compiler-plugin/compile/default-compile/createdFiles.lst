@@ -1,0 +1,17 @@
+com\hui\zhang\jingbean\JingBeanRoute.class
+com\hui\zhang\jingbean\domain\JingBeanBase.class
+com\hui\zhang\jingbean\rpc\Result.class
+com\hui\zhang\jingbean\domain\JingBeanResponse.class
+com\hui\zhang\jingbean\rpc\JingBeanJsfFacade.class
+com\hui\zhang\jingbean\rpc\JingBeanJsfFacadeImpl.class
+com\hui\zhang\jingbean\JingBeanService.class
+com\hui\zhang\jingbean\impl\JingBeanRouteImpl.class
+com\hui\zhang\jingbean\profiler\CallerInfo.class
+com\hui\zhang\jingbean\domain\JingBeanRequest.class
+com\hui\zhang\jingbean\domain\JingBeanMethodEnum.class
+com\hui\zhang\jingbean\rpc\JPeasRequest.class
+com\hui\zhang\jingbean\profiler\Profiler.class
+com\hui\zhang\jingbean\impl\JingBeanServiceImpl.class
+com\hui\zhang\jingbean\domain\JingBeanResultEnum.class
+com\hui\zhang\jingbean\domain\JingBeanGroupEnum.class
+com\hui\zhang\jingbean\JingBeanCallback.class

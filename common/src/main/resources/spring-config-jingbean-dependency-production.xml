@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    ">
+
+    <bean id="jpeasDependencyRoute" class="com.hui.zhang.jingbean.impl.JingBeanRouteImpl">
+        <property name="jingBeanJsfFacadeMap">
+            <map>
+                <entry key-ref="LF_JPOS_CLOUD" value-ref="jingBeanJsfFacadeLF"/>
+                <entry key-ref="MJQ_JPOS_CLOUD" value-ref="jingBeanJsfFacadeMJQ"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="MJQ_JPOS_CLOUD" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField" value="com.hui.zhang.jingbean.domain.JingBeanGroupEnum.MJQ_JPOS_CLOUD"/>
+    </bean>
+    <bean id="LF_JPOS_CLOUD" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField" value="com.hui.zhang.jingbean.domain.JingBeanGroupEnum.LF_JPOS_CLOUD"/>
+    </bean>
+    <!--模拟rpc请求-->
+    <bean id="jingBeanJsfFacadeLF" class="com.hui.zhang.jingbean.rpc.JingBeanJsfFacadeImpl">
+        <property name="alias" value="LF_JPOS_CLOUD"></property>
+    </bean>
+
+    <bean id="jingBeanJsfFacadeMJQ" class="com.hui.zhang.jingbean.rpc.JingBeanJsfFacadeImpl">
+        <property name="alias" value="MJQ_JPOS_CLOUD"></property>
+    </bean>
+</beans>

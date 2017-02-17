@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--来自 jd-life-common-->
+    <import resource="spring-config-jingbean-dependency-${order-router-type}.xml"/>
+
+    <!--京豆服务实现-->
+    <bean id="jingBeanService" class="com.hui.zhang.jingbean.impl.JingBeanServiceImpl">
+        <property name="umpAppName" value="man.rdgame"/>
+        <property name="umpKeyPrefix" value="jd-rdgame.interface.out"/>
+    </bean>
+
+    <!--通用属性-->
+    <bean id="jingbeanRequestBase" abstract="true" class="com.hui.zhang.jingbean.domain.JingBeanBase">
+        <property name="orgId" value="${jsf.jing.bean.orgId}"/>
+        <property name="topBusinessId" value="${jsf.jing.bean.topBusinessId}"/>
+        <property name="secondBusinessId" value="${jsf.jing.bean.secondBusinessId}"/>
+        <property name="callerId" value="${jsf.jing.bean.callerId}"/>
+        <property name="domain" value="${jsf.jing.bean.domain}"/>
+        <property name="memo" value="${jsf.jing.bean.memo}"/>
+        <property name="userVisible" value="${jsf.jing.bean.userVisible}"/>
+    </bean>
+    <!--1-->
+    <bean id="jingbeanRequestNormal_1" parent="jingbeanRequestBase"
+          class="com.hui.zhang.jingbean.domain.JingBeanRequest">
+        <property name="businessId" value="${jsf.jing.bean.businessId_1}"/>
+        <property name="key" value="${jsf.jing.bean.key_1}"/>
+    </bean>
+    <!--2-->
+    <bean id="jingbeanRequestNormal_2" parent="jingbeanRequestBase"
+          class="com.hui.zhang.jingbean.domain.JingBeanRequest">
+        <property name="businessId" value="${jsf.jing.bean.businessId_2}"/>
+        <property name="key" value="${jsf.jing.bean.key_2}"/>
+    </bean>
+</beans>

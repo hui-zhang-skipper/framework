@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="GBK"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="jpeasDependencyRoute" class="com.hui.zhang.jingbean.impl.JingBeanRouteImpl">
+        <property name="jingBeanJsfFacadeMap">
+            <map>
+                <entry key-ref="JPOS" value-ref="jingBeanJsfFacadeJPOS"/>
+            </map>
+        </property>
+    </bean>
+    <bean id="JPOS" class="org.springframework.beans.factory.config.FieldRetrievingFactoryBean">
+        <property name="staticField" value="com.hui.zhang.jingbean.domain.JingBeanGroupEnum.JPOS"/>
+    </bean>
+    <!-- 测试环境分组  模拟rpc-->
+    <bean id="jingBeanJsfFacadeJPOS" class="com.hui.zhang.jingbean.rpc.JingBeanJsfFacadeImpl">
+        <property name="alias" value="JPOS"></property>
+    </bean>
+
+</beans>
