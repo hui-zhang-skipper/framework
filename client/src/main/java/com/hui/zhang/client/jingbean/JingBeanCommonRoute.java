@@ -1,4 +1,4 @@
-package com.hui.zhang.client;
+package com.hui.zhang.client.jingbean;
 
 import com.hui.zhang.jingbean.domain.JingBeanRequest;
 import org.springframework.beans.BeansException;

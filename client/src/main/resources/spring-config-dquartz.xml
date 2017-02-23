@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--任务框架执行类-->
+    <bean id="dquartzTimeTask" class="com.hui.zhang.client.dquartz.DquartzTimeTask"></bean>
+    <bean id="sync" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="jobDetail"/>
+        <property name="cronExpression" value="0 0/1 * * * ?"/>
+    </bean>
+    <!--quartz执行-->
+    <bean id="jobDetail" class="com.hui.zhang.dquartz.MethodInvokingDistributedJobDetailFactoryBean">
+        <property name="targetObject" ref="dquartzTimeTask"/>
+        <property name="targetMethod" value="execute"/>
+        <property name="concurrent" value="false"/>
+        <property name="groups">
+            <list>
+                <ref bean="distributedGroup"/>
+            </list>
+        </property>
+        <property name="zooKeeperClientFactory" ref="zooKeeperClientFactory"/>
+    </bean>
+    <!--机器分组信息-->
+    <bean id="distributedGroup" class="com.hui.zhang.dquartz.config.Group">
+        <property name="name" value="distributedGroup"/>
+        <property name="ids">
+            <list>
+                <value>127.0.0.1</value>
+                <value>127.0.0.1</value>
+                <value>127.0.0.1</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="zooKeeperClientFactory" class="com.hui.zhang.dquartz.SimpleCuratorFrameworkFactory"
+          init-method="start" destroy-method="close">
+        <property name="zooKeeperConfig">
+            <bean class="com.hui.zhang.dquartz.config.ZooKeeperConfig">
+                <property name="connectString" value=""/>
+                <property name="rootPath" value=""/>
+            </bean>
+        </property>
+        <property name="connectionStateListener">
+            <bean class="com.hui.zhang.client.dquartz.DefaultConnectionStateListener"/>
+        </property>
+    </bean>
+</beans>
