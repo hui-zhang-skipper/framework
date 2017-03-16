@@ -5,4 +5,6 @@
 # dquartz 
 分布式work
 # client 
-客户端调用演示
+客户端调用演示 
+# fluent-validator 
+链式校验（精简改造版）
