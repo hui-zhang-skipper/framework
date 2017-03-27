@@ -9,9 +9,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.util.CollectionUtils;
 
-import java.util.Arrays;
-import java.util.List;
-
 /**
  * @author zhanghui32
  * @date 2017/3/15
@@ -58,6 +55,7 @@ public class FluentValidator {
 
     /**
      * 按照默认验证回调条件，开始使用验证
+     * 采用默认回调函数进行处理
      *
      * @return FluentValidator
      */
@@ -81,6 +79,7 @@ public class FluentValidator {
     /**
      * 将键值对放入上下文
      * 此方法可以设置访问，校验之外所需对象信息
+     *
      * @param key   键
      * @param value 值
      * @return FluentValidator
@@ -115,12 +114,10 @@ public class FluentValidator {
                 Object target = element.getTarget();
                 Validator v = element.getValidator();
                 try {
-                    if (v.accept(context, target)) {
-                        if (!v.validate(context, target)) {
-                            result.setIsSuccess(false);
-                            if (isFailFast) {
-                                break;
-                            }
+                    if (!v.validate(context, target)) {
+                        result.setIsSuccess(false);
+                        if (isFailFast) {
+                            break;
                         }
                     }
                 } catch (Exception e) {
@@ -197,6 +194,26 @@ public class FluentValidator {
         return this;
     }
 
+    /**
+     * 在待验证对象<tt>t</tt>上，使用<tt>chain</tt>验证器链进行验证
+     *
+     * @param t     待验证对象
+     * @param chain 验证器链
+     * @return FluentValidator
+     */
+    public <T> FluentValidator on(T t, ValidatorChain chain) {
+        Preconditions.checkNotNull(chain, "ValidatorChain should not be NULL");
+        if (CollectionUtils.isEmpty(chain.getValidators())) {
+            lastAddCount = 0;
+        } else {
+            for (Validator v : chain.getValidators()) {
+                doAdd(new ValidatorElement(t, v));
+            }
+            lastAddCount = chain.getValidators().size();
+        }
+
+        return this;
+    }
 
     /**
      * 当不满足expression条件时
