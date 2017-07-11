@@ -3,6 +3,7 @@ package com.hui.zhang.algorithm;
 /**
  * @author zhanghui32
  * @date 2017/3/14
+ * 二叉树操作
  */
 public class BinaryTree {
     private int data;
