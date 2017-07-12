@@ -3,9 +3,16 @@ package com.hui.zhang.algorithm;
 /**
  * @author zhanghui32
  * @date 2017/7/11
+ * 二分查找 场景：对有序列表进行查找
  */
 public class BinarySearch {
 
+    /**
+     * 普通实现
+     * @param arr
+     * @param des
+     * @return
+     */
     public int binarySearch(int[] arr, int des) {
         int low = 0;
         int high = arr.length - 1;
@@ -22,6 +29,14 @@ public class BinarySearch {
         return -1;
     }
 
+    /**
+     * 递归实现
+     * @param arr
+     * @param low
+     * @param high
+     * @param key
+     * @return
+     */
     public int binarySearch(int[] arr, int low, int high, int key) {
         if (low <= high) {
             int mid = (low + high) / 2;
