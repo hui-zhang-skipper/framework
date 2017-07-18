@@ -1,5 +1,7 @@
 package com.hui.zhang.algorithm;
 
+import java.util.Arrays;
+
 /**
  * @author zhanghui32
  * @date 2017/7/11
@@ -9,6 +11,7 @@ public class BinarySearch {
 
     /**
      * 普通实现
+     *
      * @param arr
      * @param des
      * @return
@@ -31,6 +34,7 @@ public class BinarySearch {
 
     /**
      * 递归实现
+     *
      * @param arr
      * @param low
      * @param high
@@ -51,10 +55,21 @@ public class BinarySearch {
         return -1;
     }
 
+    public void reverseArray(int[] array) {
+        int mid = array.length / 2;
+        for (int i = 0; i < mid; i++) {
+            int temp = array[i];
+            array[i] = array[array.length - i - 1];
+            array[array.length - i - 1] = temp;
+        }
+    }
+
     public static void main(String[] args) {
         int[] arr = new int[]{2, 4, 5, 7, 9, 34, 67, 89, 360};
         BinarySearch binarySearch = new BinarySearch();
         int i = binarySearch.binarySearch(arr, 9);
         System.out.println("value:" + i);
+        binarySearch.reverseArray(arr);
+        System.out.println("value:" + Arrays.toString(arr));
     }
 }
