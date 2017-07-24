@@ -11,7 +11,16 @@
 
     <artifactId>client</artifactId>
 
+    <properties>
+        <kafka.version>0.8.2.1</kafka.version>
+    </properties>
+
     <dependencies>
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.10</artifactId>
+            <version>${kafka.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.hui.zhang</groupId>
             <artifactId>common</artifactId>
