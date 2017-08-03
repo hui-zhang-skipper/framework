@@ -1,6 +1,8 @@
 package com.hui.zhang.algorithm;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author zhanghui32
@@ -62,6 +64,20 @@ public class BinarySearch {
             array[i] = array[array.length - i - 1];
             array[array.length - i - 1] = temp;
         }
+    }
+
+    public void sonArray(int[] arr) {
+        List<String> list = new ArrayList<String>();
+        for (int i = 0; i < arr.length; i++) {
+            list.add(arr[i] + "");
+            String temp = arr[i] + "";
+            for (int j = i + 1; j < arr.length; j++) {
+                temp = temp + "," + arr[j];
+                list.add(temp);
+            }
+
+        }
+        System.out.println(list.toString());
     }
 
     public static void main(String[] args) {
