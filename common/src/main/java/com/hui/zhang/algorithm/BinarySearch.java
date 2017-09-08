@@ -57,6 +57,10 @@ public class BinarySearch {
         return -1;
     }
 
+    /**
+     * 数组翻转
+     * @param array
+     */
     public void reverseArray(int[] array) {
         int mid = array.length / 2;
         for (int i = 0; i < mid; i++) {
@@ -64,6 +68,22 @@ public class BinarySearch {
             array[i] = array[array.length - i - 1];
             array[array.length - i - 1] = temp;
         }
+    }
+
+    /**
+     * int 数字翻转
+     * @param x
+     * @return
+     */
+    public int reverseInteger(int x) {
+        int res = 0;
+        while (x != 0) {
+            if (Math.abs(res) > Integer.MAX_VALUE / 10) return 0;
+            res = res * 10 + x % 10;
+            x /= 10;
+        }
+        return res;
+
     }
 
     public void sonArray(int[] arr) {
