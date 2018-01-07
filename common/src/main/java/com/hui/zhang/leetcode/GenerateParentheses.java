@@ -1,10 +1,11 @@
-package com.hui.zhang.algorithm;
+package com.hui.zhang.leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by zhanghui on 2018/1/6.
+ * n对括号  有多少种匹配方式
  */
 public class GenerateParentheses {
 
