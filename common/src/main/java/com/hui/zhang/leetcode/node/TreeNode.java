@@ -1,4 +1,4 @@
-package com.hui.zhang.leetcode;
+package com.hui.zhang.leetcode.node;
 
 public class TreeNode {
 

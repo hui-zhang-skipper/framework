@@ -1,5 +1,7 @@
 package com.hui.zhang.leetcode;
 
+import com.hui.zhang.leetcode.node.TreeNode;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;

@@ -1,5 +1,7 @@
 package com.hui.zhang.leetcode;
 
+import com.hui.zhang.leetcode.node.ListNode;
+
 /**
  * 链表分区，小于指定值的移到链表的前面，大值不变
  */

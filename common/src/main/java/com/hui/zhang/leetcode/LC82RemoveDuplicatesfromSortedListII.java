@@ -1,5 +1,7 @@
 package com.hui.zhang.leetcode;
 
+import com.hui.zhang.leetcode.node.ListNode;
+
 /**
  * 链表删除重复节点
  */

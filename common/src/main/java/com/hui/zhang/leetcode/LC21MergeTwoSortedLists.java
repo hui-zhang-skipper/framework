@@ -1,5 +1,7 @@
 package com.hui.zhang.leetcode;
 
+import com.hui.zhang.leetcode.node.ListNode;
+
 /**
  * Created by zhanghui on 2018/1/7.
  * 两个有序链表合并

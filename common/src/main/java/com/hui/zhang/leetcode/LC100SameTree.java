@@ -1,5 +1,7 @@
 package com.hui.zhang.leetcode;
 
+import com.hui.zhang.leetcode.node.TreeNode;
+
 public class LC100SameTree {
 
     public boolean isSameTree(TreeNode p, TreeNode q) {
