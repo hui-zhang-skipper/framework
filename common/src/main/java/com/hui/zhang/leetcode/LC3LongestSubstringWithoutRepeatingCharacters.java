@@ -5,7 +5,7 @@ import java.util.HashMap;
 /**
  * Created by zhanghui on 2018/1/7.
  */
-public class LongestSubstring {
+public class LC3LongestSubstringWithoutRepeatingCharacters {
 
     public static int lengthOfLongestSubstring(String s) {
         if (s.length() == 0) {

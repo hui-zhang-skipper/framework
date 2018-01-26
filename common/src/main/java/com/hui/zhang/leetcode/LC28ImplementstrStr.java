@@ -4,7 +4,7 @@ package com.hui.zhang.leetcode;
  * Created by zhanghui on 2018/1/7.
  * 一个字符串在另一个字符串中的位置
  */
-public class StrStr {
+public class LC28ImplementstrStr {
 
     public int strStr(String haystack, String needle) {
         int l1 = haystack.length(), l2 = needle.length();

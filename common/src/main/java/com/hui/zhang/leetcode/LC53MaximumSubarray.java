@@ -3,7 +3,7 @@ package com.hui.zhang.leetcode;
 /**
  * Created by zhanghui on 2018/1/8.
  */
-public class MaxSubArray {
+public class LC53MaximumSubarray {
 
     public static int maxSubArray(int[] nums) {
         if (nums == null || nums.length == 0) {

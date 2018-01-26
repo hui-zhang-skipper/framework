@@ -6,7 +6,7 @@ import java.util.Stack;
  * Created by zhanghui on 2018/1/7.
  * 最长有效的括号
  */
-public class LongestValidParentheses {
+public class LC32LongestValidParentheses {
 
     public static int longestValidParentheses(String s) {
         Stack<Integer> stack = new Stack<Integer>();

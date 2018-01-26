@@ -3,7 +3,7 @@ package com.hui.zhang.leetcode;
 /**
  * Created by zhanghui on 2018/1/7.
  */
-public class CountAndSay {
+public class LC38CountAndSay {
 
     public static String countAndSay(int n) {
         if (n < 1) {

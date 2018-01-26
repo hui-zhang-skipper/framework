@@ -3,7 +3,7 @@ package com.hui.zhang.leetcode;
 /**
  * Created by zhanghui on 2018/1/8.
  */
-public class PlusOne {
+public class LC66PlusOne {
 
     public int[] plusOne(int[] digits) {
         int carry = 1;

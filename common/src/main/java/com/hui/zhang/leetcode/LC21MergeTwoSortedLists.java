@@ -4,7 +4,7 @@ package com.hui.zhang.leetcode;
  * Created by zhanghui on 2018/1/7.
  * 两个有序链表合并
  */
-public class MergeTwoSortedList {
+public class LC21MergeTwoSortedLists {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
         ListNode head = new ListNode(0);
@@ -27,26 +27,10 @@ public class MergeTwoSortedList {
     public static void main(String[] args){
         ListNode l1=new ListNode(1);
         ListNode l2=new ListNode(3);
-        MergeTwoSortedList mergeTwoSortedList=new MergeTwoSortedList();
+        LC21MergeTwoSortedLists mergeTwoSortedList=new LC21MergeTwoSortedLists();
         ListNode l3= mergeTwoSortedList.mergeTwoLists(l1,l2);
         System.out.println(l3);
     }
 
 }
 
-class ListNode {
-    int val;
-    ListNode next;
-
-    public ListNode(int x) {
-        this.val = x;
-    }
-
-    @Override
-    public String toString() {
-        return "ListNode{" +
-                "val=" + val +
-                ", next=" + next +
-                '}';
-    }
-}

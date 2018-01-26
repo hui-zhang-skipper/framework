@@ -7,7 +7,7 @@ import java.util.List;
  * Created by zhanghui on 2018/1/6.
  * n对括号  有多少种匹配方式
  */
-public class GenerateParentheses {
+public class LC22GenerateParentheses {
 
 
     public static List<String> generateParentheses(int n) {
