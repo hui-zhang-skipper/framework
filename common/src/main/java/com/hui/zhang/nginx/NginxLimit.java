@@ -1,4 +1,4 @@
-package com.hui.zhang.Nginx;
+package com.hui.zhang.nginx;
 
 import java.io.IOException;
 import java.util.concurrent.CountDownLatch;

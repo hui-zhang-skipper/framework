@@ -1,4 +1,4 @@
-package com.hui.zhang.Serialize;
+package com.hui.zhang.serialize;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
