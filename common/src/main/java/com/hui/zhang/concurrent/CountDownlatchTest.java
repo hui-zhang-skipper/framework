@@ -10,6 +10,7 @@ public class CountDownlatchTest {
             new Thread(new readNum(i, countDownLatch)).start();
         }
         countDownLatch.await();
+        //阻塞在主线程 等待所有子线程都执行完毕，再执行主线程
         System.out.println("线程执行结束。。。。");
     }
 

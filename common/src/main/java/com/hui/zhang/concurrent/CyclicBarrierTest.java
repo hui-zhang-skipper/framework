@@ -32,6 +32,7 @@ public class CyclicBarrierTest {
                 System.out.println("id:" + id);
                 try {
                     cyc.await();
+                    //子线程间相互等待，等到所有子线程都达到某种状态，再执行线程后续操作
                     //不继续执行后续操作
                     System.out.println("线程组任务" + id + "结束，其他任务继续");
                 } catch (Exception e) {
