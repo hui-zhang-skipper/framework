@@ -19,7 +19,7 @@ public class LC146LRUCache {
         tail.pre = head;
         head.pre = null;
         tail.next = null;
-        hm = new HashMap<>();
+        //hm = new HashMap<>();
     }
 
     public int get(int key) {
