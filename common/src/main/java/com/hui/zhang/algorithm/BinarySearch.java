@@ -86,6 +86,10 @@ public class BinarySearch {
 
     }
 
+    /**
+     * 子数组
+     * @param arr
+     */
     public void sonArray(int[] arr) {
         List<String> list = new ArrayList<String>();
         for (int i = 0; i < arr.length; i++) {
