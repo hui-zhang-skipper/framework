@@ -33,6 +33,8 @@ public class Client {
     //用于保存接收消息对象类型及该类型消息处理的对象
     private ConcurrentHashMap<Class, ObjectAction> actionMapping = new ConcurrentHashMap<Class, ObjectAction>();
 
+    private static Object object=new Object();
+
 
     public Client(String serverIp, int port) {
         this.serverIp = serverIp;
@@ -50,9 +52,12 @@ public class Client {
 
     }
 
-
+    /**
+     * tcp 监听close_wait 状态
+     * @param args
+     * @throws Exception
+     */
     public static void main(String[] args) throws Exception {
-        Object object=new Object();
         synchronized (object) {
             final int length = 10;
             String serverIp = "localhost";
