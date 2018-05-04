@@ -5,7 +5,7 @@
       <configuration />
     </facet>
   </component>
-  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_5">
+  <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_1_8">
     <output url="file://$MODULE_DIR$/target/classes" />
     <output-test url="file://$MODULE_DIR$/target/test-classes" />
     <content url="file://$MODULE_DIR$">
@@ -29,6 +29,16 @@
     <orderEntry type="library" name="Maven: net.sf.jopt-simple:jopt-simple:3.2" level="project" />
     <orderEntry type="library" name="Maven: com.101tec:zkclient:0.3" level="project" />
     <orderEntry type="module" module-name="common" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-redis:2.0.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-keyvalue:2.0.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.data:spring-data-commons:2.0.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-tx:5.0.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework:spring-oxm:5.0.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: mysql:mysql-connector-java:5.1.6" level="project" />
+    <orderEntry type="library" name="Maven: org.codeartisans:org.json:20130603" level="project" />
+    <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet.ext.servlet:2.0.14" level="project" />
+    <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet.ext.json:2.0.14" level="project" />
+    <orderEntry type="library" name="Maven: org.restlet.jee:org.restlet:2.0.14" level="project" />
     <orderEntry type="module" module-name="dquartz" />
     <orderEntry type="library" name="Maven: org.apache.curator:curator-recipes:3.2.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.curator:curator-framework:3.2.1" level="project" />

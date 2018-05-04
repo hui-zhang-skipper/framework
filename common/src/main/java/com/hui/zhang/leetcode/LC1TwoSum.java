@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class LC1TwoSum {
 
-    public int[] twoSum(int[] numbers, int target) {
+    public int[]  twoSum(int[] numbers, int target) {
         int[] result = new int[2];
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int length = numbers.length;
