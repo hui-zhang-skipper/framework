@@ -23,4 +23,20 @@ public class ArrayOfSonMax {
         int[] array = new int[]{1, -2, 3, 5, -2, 6, -1};
         System.out.printf(maxSum(array) + "");
     }
+
+    public static void main(String[] args) {
+        Double payOrderAmt=85.0;
+        Double doormanEstimatedAmount=85.0;
+        Double payAmt=85.0;
+        if (payOrderAmt.equals(doormanEstimatedAmount) && payAmt > 0) {
+            System.out.printf("true");
+        }
+        System.out.printf("false");
+
+        Double index=1.0;
+        Double index2=1.0;
+        if (index==index2){
+            System.out.printf("1");
+        }
+    }
 }
