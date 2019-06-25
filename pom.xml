@@ -82,6 +82,13 @@
             <artifactId>redisson</artifactId>
             <version>3.11.0</version>
         </dependency>
+
+        <!--rocketmq-->
+        <dependency>
+            <groupId>org.apache.rocketmq</groupId>
+            <artifactId>rocketmq-client</artifactId>
+            <version>4.5.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>

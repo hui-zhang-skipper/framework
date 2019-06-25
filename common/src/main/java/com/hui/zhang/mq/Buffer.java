@@ -1,5 +1,6 @@
 package com.hui.zhang.mq;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.concurrent.locks.Condition;
@@ -93,15 +94,17 @@ public class Buffer {
     }
 
     public static void main(String[] args) {
-        Buffer buffer = new Buffer(2);
-        Producer producer = new Producer(buffer);
-        Consumer consumer = new Consumer(buffer);
-        for (int i = 0; i < 3; i++) {
-            new Thread(producer, "producer-" + i).start();
+        Double cashierRatio=0.72;
+        BigDecimal actualPayAmount=new BigDecimal(15.00);
+        String result = "";
+        if (cashierRatio >=0.5 && cashierRatio <= 0.9){
+            BigDecimal pay = actualPayAmount.multiply(new BigDecimal(cashierRatio));
+            result = "【已参与充返，相当于" + pay + "元】";
+        } else if (cashierRatio>0 && cashierRatio < 0.5){
+            BigDecimal pay = actualPayAmount.multiply(new BigDecimal(0.5)).setScale(2,BigDecimal.ROUND_CEILING);
+            result = "【已参与充返，相当于" + pay + "元】";
         }
-        for (int i = 0; i < 3; i++) {
-            new Thread(consumer, "consumer-" + i).start();
-        }
+        System.out.printf(result);
     }
 
 }
