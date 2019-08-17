@@ -8,16 +8,24 @@ import java.util.Map;
  */
 public class LC1TwoSum {
 
-    public int[]  twoSum(int[] numbers, int target) {
+    public int[] twoSum(int[] numbers, int target) {
         int[] result = new int[2];
         Map<Integer, Integer> map = new HashMap<Integer, Integer>();
         int length = numbers.length;
         for (int i = 0; i < length; i++) {
+            map.put(numbers[i], i);
             if (map.containsKey(target - numbers[i])) {
                 result[1] = i + 1;
                 result[0] = map.get(target - numbers[i]);
+                return result;
             }
         }
         return result;
+    }
+
+    public static void main(String[] args) {
+        Integer t = null;
+        int m = t;
+        System.out.printf(m + "");
     }
 }
